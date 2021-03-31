@@ -1,8 +1,8 @@
 package com.example.shopcart.repository;
-import com.example.shopcart.domain.Product;
-import org.springframework.data.repository.CrudRepository;
+import com.example.shopcart.entity.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository <Product, Long> {
 }
