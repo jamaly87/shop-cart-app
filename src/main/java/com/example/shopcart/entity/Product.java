@@ -7,14 +7,15 @@ import javax.persistence.*;
 @Data
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 
 public class Product {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long pId;
     @Column(nullable = false,columnDefinition = "TEXT")
-    private String name;
+    private String productName;
     @Column(columnDefinition = "TEXT")
     private String description;
     @Column(nullable = false)
