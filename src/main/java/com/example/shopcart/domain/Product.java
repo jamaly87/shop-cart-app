@@ -14,13 +14,12 @@ import javax.persistence.*;
 @Entity
 public class Product {
     @Id
-    @SequenceGenerator(name = "product_sequence",sequenceName = "product_sequence",
-                        allocationSize = 1)
-    @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "product_sequence")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long Id;
     private String name;
     private String description;
-    transient Price price; //TODO - check whether to keep or remove 'transient'
+    @OneToOne(mappedBy = "product")
+    Price price; //TODO - check whether to keep or remove 'transient'
 
     public Product(String name, String description, Price price) {
         this.name = name;
